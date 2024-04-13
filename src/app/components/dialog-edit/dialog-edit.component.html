@@ -1,0 +1,55 @@
+<div class="container">
+  <h2>Editando Proveedor</h2>
+  <form #editForm="ngForm">
+    <div>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Razon Social" name="razonSocial" [(ngModel)]="data.razonSocial" required />
+        <mat-error *ngIf="editForm.controls['razonSocial'].hasError('required')">Razon Social es requerido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Nombre Comercial" name="nombreComercial" [(ngModel)]="data.nombreComercial" required />
+        <mat-error *ngIf="editForm.controls['nombreComercial'].hasError('required')">Nombre Comercial es requerido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Identificacion Tributaria" name="identificacionTributaria" [(ngModel)]="data.identificacionTributaria" required />
+        <mat-error *ngIf="editForm.controls['identificacionTributaria'].hasError('required')">Identificacion Tributaria es requerida</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Numero Telefonico" name="numeroTelefonico" [(ngModel)]="data.numeroTelefonico" pattern="[0-9]*" />
+        <mat-error *ngIf="editForm.controls['numeroTelefonico'].hasError('pattern')">Ingrese solo números</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Correo Electronico" name="correoElectronico" [(ngModel)]="data.correoElectronico" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" />
+        <mat-error *ngIf="editForm.controls['correoElectronico'].hasError('pattern')">Ingrese una dirección de correo electrónico válida</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Sitio Web" name="sitioWeb" [(ngModel)]="data.sitioWeb" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Dirección Física" name="direccionFisica" [(ngModel)]="data.direccionFisica" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="País" name="pais" [(ngModel)]="data.pais" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Facturacion Anual" name="facturacionAnual" [(ngModel)]="data.facturacionAnual" pattern="[0-9]*" />
+        <mat-error *ngIf="editForm.controls['facturacionAnual'].hasError('pattern')">Ingrese solo números</mat-error>
+      </mat-form-field>
+
+      <div>
+        <button mat-button (click)="cerrarDialogo()">Cancelar</button>
+        <button mat-button color="primary" [disabled]="editForm.invalid" (click)="confirmado()">Guardar</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+

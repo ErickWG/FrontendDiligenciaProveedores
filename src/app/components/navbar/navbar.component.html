@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span>Ejercicio 2</span>
+        <span class="example-spacer"></span>
+        <!-- Login button -->
+        <button mat-raised-button color="accent" *ngIf="!userIsLogin()" [routerLink]="'/login'">
+            Login
+            <mat-icon>account_circle</mat-icon>
+        </button>
+
+        <!-- Logout button -->
+        <button (click)="cerrar()" mat-raised-button color="warn" *ngIf="userIsLogin()">
+            Log Out
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>

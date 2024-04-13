@@ -1,0 +1,37 @@
+<h2>Reporte de Coincidencia</h2>
+<p>Total de Coincidencias: {{ totalCoincidencias }}</p>
+
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 custom-table">
+
+    
+    <ng-container matColumnDef="Entity">
+        <th mat-header-cell *matHeaderCellDef>Entity</th>
+        <td mat-cell *matCellDef="let element">{{element.Entity}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Jurisdiction">
+        <th mat-header-cell *matHeaderCellDef>Jurisdiction</th>
+        <td mat-cell *matCellDef="let element">{{element.Jurisdiction}}</td>
+    </ng-container>
+    
+    
+    <ng-container matColumnDef="LinkedTo">
+        <th mat-header-cell *matHeaderCellDef>LinkedTo</th>
+        <td mat-cell *matCellDef="let element">{{element.LinkedTo}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="DataFrom">
+        <th mat-header-cell *matHeaderCellDef>DataFrom</th>
+        <td mat-cell *matCellDef="let element">{{element.DataFrom}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator              
+              [pageSizeOptions]="[8, 16]"
+              showFirstLastButtons
+              aria-label="Select page of periodic elements">
+</mat-paginator>

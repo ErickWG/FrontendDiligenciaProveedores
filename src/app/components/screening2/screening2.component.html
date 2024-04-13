@@ -1,0 +1,55 @@
+
+<div>
+    <h2>Reporte de Coincidencia</h2>
+    <p>Total de Coincidencias: {{ totalCoincidencias }}</p>
+
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 custom-table">
+    
+        
+        <ng-container matColumnDef="Name">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let element">{{element.Name}}</td>
+        </ng-container>
+    
+        <ng-container matColumnDef="Address">
+            <th mat-header-cell *matHeaderCellDef>Address</th>
+            <td mat-cell *matCellDef="let element">{{element.Addrsess}}</td>
+        </ng-container>
+        
+        
+        <ng-container matColumnDef="Type">
+            <th mat-header-cell *matHeaderCellDef>Type</th>
+            <td mat-cell *matCellDef="let element">{{element.Type}}</td>
+        </ng-container>
+    
+        <ng-container matColumnDef="Programs">
+            <th mat-header-cell *matHeaderCellDef>Programs</th>
+            <td mat-cell *matCellDef="let element">{{element.Programs}}</td>
+        </ng-container>
+    
+        <ng-container matColumnDef="List">
+            <th mat-header-cell *matHeaderCellDef>List</th>
+            <td mat-cell *matCellDef="let element">{{element.List}}</td>
+        </ng-container>
+    
+        <ng-container matColumnDef="Score">
+            <th mat-header-cell *matHeaderCellDef>Score</th>
+            <td mat-cell *matCellDef="let element">{{element.Score}}</td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
+    <mat-paginator
+    [pageSizeOptions]="[8, 16]"
+    showFirstLastButtons
+    aria-label="Select page of periodic elements"
+    [pageSize]="8"
+    [pageIndex]="0"
+    [length]="dataSource.data.length">
+  </mat-paginator>
+  
+  </div>
+

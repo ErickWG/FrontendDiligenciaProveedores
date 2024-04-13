@@ -1,0 +1,25 @@
+
+div.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.button {
+    align-items: center;
+    width:20%;
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+.card{
+     max-width: 400px;
+    width: 100%; /* Asegúrate de que el ancho sea el 100% para evitar desbordamientos */
+    text-align: center; /* Alinea el contenido del mat-card al centro */
+
+}
+.total {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
